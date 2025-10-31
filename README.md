@@ -20,6 +20,7 @@ It’s ideal for **students, researchers, and beginners** looking to understand 
 - Educational resource for learning **core image processing theory.**
 
 ## 🏗️ Project Structure
+<details> <summary>Click to expand</summary>
 Digital-Image-Proccesing-from-Scratch-and-using-Built-in-Functions/
 │
 ├── DIPCH2.ipynb              # Basic image operations
@@ -30,7 +31,7 @@ Digital-Image-Proccesing-from-Scratch-and-using-Built-in-Functions/
 │
 ├── requirements.txt          # (Optional) Dependencies list
 └── README.md                 # Documentation file
-
+</details>
 ## 🧩 Topics Covered
 
 | Category | Techniques Implemented |
