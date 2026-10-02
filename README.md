@@ -1,106 +1,66 @@
-# 🧠 Digital Image Processing — From Scratch & Using Built-in Functions
+# Digital Image Processing
 
-A comprehensive exploration of **Digital Image Processing (DIP)** — implementing image processing algorithms both **from scratch** and using **OpenCV/NumPy** for comparison.
+NumPy implementations and OpenCV comparisons for learning how image-processing operations work. The six notebooks move from pixels and sampling to intensity transformations, filtering, morphology, and color.
 
-## 📘 Overview
+The examples use small, generated images included in the repository. No textbook image archive, GPU, or machine-specific path is required.
 
-This repository demonstrates fundamental and advanced **Digital Image Processing** techniques.  
-Each notebook includes:
-- Step-by-step algorithmic implementation (from scratch)
-- Equivalent method using Python libraries
-- Detailed visualizations for learning and comparison
+## Learning path
 
-It’s ideal for **students, researchers, and beginners** looking to understand how image processing works mathematically and practically.
+| Order | Notebook | Topics |
+| --- | --- | --- |
+| 1 | [Image fundamentals](notebooks/01_image_fundamentals.ipynb) | Arrays, channels, cropping, replication, sampling, quantization |
+| 2 | [Sampling and interpolation](notebooks/02_sampling_and_interpolation.ipynb) | Nearest neighbor, bilinear, bicubic |
+| 3 | [Intensity and histograms](notebooks/03_intensity_and_histograms.ipynb) | Negative, logarithm, gamma, stretching, slicing, bit planes, equalization |
+| 4 | [Spatial filtering](notebooks/04_spatial_filtering.ipynb) | Correlation, smoothing, median, derivatives, Laplacian |
+| 5 | [Morphology](notebooks/05_morphology.ipynb) | Erosion, dilation, structuring elements, area and centroid |
+| 6 | [Color processing](notebooks/06_color_processing.ipynb) | RGB/BGR, channels, mixing, pseudocolor, scaling |
 
-## 🧠 Key Features
-- Implementations **from scratch** using NumPy.
-- Equivalent **built-in methods** using OpenCV.
-- Covers **basic to advanced** topics in image enhancement and filtering.
-- Visual, interactive **Jupyter Notebook** examples.
-- Educational resource for learning **core image processing theory.**
+## Quick start
 
-## 🏗️ Project Structure
-<details> <summary>Click to expand</summary>
-Digital-Image-Proccesing-from-Scratch-and-using-Built-in-Functions/
-│
-├── DIPCH2.ipynb              # Basic image operations
-├── DIP_Ch2.ipynb             # Variation of Chapter 2
-├── DIPCH_3.ipynb             # Image enhancement techniques
-├── DIP_CH9.ipynb             # Morphological and filtering operations
-├── DIP_Color_Images.ipynb    # Color image transformations
-│
-├── requirements.txt          # (Optional) Dependencies list
-└── README.md                 # Documentation file
-</details>
-## 🧩 Topics Covered
+Use Python 3.11 or 3.12. Clone the repository and open a terminal in its root:
 
-| Category | Techniques Implemented |
-|-----------|------------------------|
-| **Image Basics** | Reading, displaying, resizing, flipping, cropping |
-| **Color Spaces** | RGB ↔ Grayscale ↔ HSV conversions |
-| **Filtering** | Mean, Gaussian, and Median filters |
-| **Histogram Analysis** | Histogram Equalization, Contrast Stretching |
-| **Edge Detection** | Sobel, Prewitt, Canny edge detectors |
-| **Morphology** | Erosion, Dilation, Opening, Closing |
-| **Transformations** | Translation, Rotation, Scaling, Perspective |
-| **Color Image Processing** | RGB channel analysis and manipulation |
-
-## ⚙️ Installation
-
-### 1️⃣ Clone the repository
 ```bash
 git clone https://github.com/Muhammad-Huzifa/Digital-Image-Proccesing-from-Scratch-and-using-Built-in-Functions.git
 cd Digital-Image-Proccesing-from-Scratch-and-using-Built-in-Functions
-
-python -m venv venv
-venv\Scripts\activate   # For Windows
-pip install numpy opencv-python matplotlib
+python -m venv .venv
 ```
 
----
+Activate the environment using the command for your terminal:
 
-# ✅ 7. Usage  
-### 🔹 What:
-Explain how to open and use the notebooks.  
-### 🔹 Why:
-Guides beginners or recruiters testing your code.
+| Terminal | Command |
+| --- | --- |
+| Windows PowerShell | `.\.venv\Scripts\Activate.ps1` |
+| Windows Command Prompt | `.venv\Scripts\activate.bat` |
+| Windows Git Bash | `source .venv/Scripts/activate` |
+| Linux/macOS | `source .venv/bin/activate` |
 
-```markdown
-## 🧪 How to Use
-
-- Open any `.ipynb` notebook in **Jupyter Notebook** or **VS Code**.  
-- Run cells sequentially to visualize how each algorithm works.  
-- Replace image paths with your own for experimentation.
+```bash
+python -m pip install -r requirements.txt
+jupyter lab
 ```
 
-## 📊 Example Outputs
+Open the first notebook and run its cells in order. Every notebook has its own setup cell and can also be run independently. OpenCV comparisons run when OpenCV is installed; the NumPy examples remain usable without it. Figures display inline, including in hosted notebook environments.
 
-| Operation | Description |
-|------------|-------------|
-| **Grayscale Conversion** | Converts RGB image to grayscale |
-| **Histogram Equalization** | Enhances image contrast |
-| **Edge Detection** | Detects sharp transitions in intensity |
-| **Morphological Filtering** | Removes small noise and refines shapes |
+## Project structure
 
-## 🧰 Tools & Libraries
-- Python 3.8+
-- NumPy
-- OpenCV
-- Matplotlib
-- Jupyter Notebook
+| Path | Purpose |
+| --- | --- |
+| `notebooks/` | Six lessons in learning order |
+| `src/image_processing/` | Shared image loading and small NumPy algorithms |
+| `data/sample_images/` | Reproducible grayscale, color, and binary PNGs |
+| `docs/` | Development notes and original notebook mapping |
+| `tests/` | Array-level correctness checks |
 
-## 👨‍💻 Author
-**Muhammad Huzaifa**  
-🔗 [GitHub Profile](https://github.com/Muhammad-Huzifa)
+## Check the implementations
 
-> Passionate about Computer Vision, Deep Learning, and AI systems.
+```bash
+python -m unittest discover -s tests -v
+```
 
-## 💫 Future Enhancements
-- Add Fourier Transform and Frequency Domain filtering
-- Add Image Segmentation examples
-- GUI for interactive image processing
+The tests cover signed filtering, nearest-neighbor indexing, equalization, and binary morphology. They also compare with OpenCV when it is installed.
 
-## 🙏 Acknowledgement
-This project was part of my **Digital Image Processing** learning journey,  
-exploring both mathematical foundations and modern implementations.
+See [development notes](docs/DEVELOPMENT.md) for numerical conventions and [the source map](docs/SOURCE_MAP.md) for the original chapter notebooks.
 
+## Author
+
+Muhammad Huzifa — [GitHub](https://github.com/Muhammad-Huzifa)
