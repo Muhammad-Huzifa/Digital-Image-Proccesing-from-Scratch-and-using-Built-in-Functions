@@ -20,8 +20,8 @@ The examples use small, generated images included in the repository. No textbook
 Use Python 3.11 or 3.12. Clone the repository and open a terminal in its root:
 
 ```bash
-git clone https://github.com/Muhammad-Huzifa/Digital-Image-Proccesing-from-Scratch-and-using-Built-in-Functions.git
-cd Digital-Image-Proccesing-from-Scratch-and-using-Built-in-Functions
+git clone https://github.com/Muhammad-Huzifa/digital-image-processing.git
+cd digital-image-processing
 python -m venv .venv
 ```
 
